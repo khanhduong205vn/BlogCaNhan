@@ -1,0 +1,61 @@
+@{
+    ViewData["Title"] = "Liên hệ";
+}
+<div class="row justify-content-center mb-4">
+    <div class="col-md-8 text-center">
+        <h1 class="display-5 fw-bold mb-2">Liên Hệ Với Tôi</h1>
+        <p class="lead mb-2">Tôi luôn sẵn sàng lắng nghe và kết nối. Hãy gửi tin nhắn cho tôi!</p>
+        <hr class="w-25 mx-auto mb-4" />
+    </div>
+</div>
+<div class="row g-4">
+    <div class="col-md-6">
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                <h3 class="h5 mb-3 text-primary">Gửi Tin Nhắn</h3>
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Họ và Tên <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="name" placeholder="Nhập họ và tên của bạn" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" name="email" placeholder="Nhập email của bạn" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Tiêu Đề <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="subject" placeholder="Nhập tiêu đề tin nhắn" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Nội Dung <span class="text-danger">*</span></label>
+                        <textarea class="form-control" name="message" rows="4" placeholder="Nhập nội dung tin nhắn" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Gửi</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card bg-light shadow-sm mb-4">
+            <div class="card-body">
+                <h5 class="card-title mb-3"><i class="bi bi-info-circle-fill me-2 text-primary"></i>Thông Tin Liên Hệ</h5>
+                <ul class="list-unstyled mb-4 text-start">
+                    <li><i class="bi bi-envelope-fill me-2 text-danger"></i><strong>Email:</strong> khanhduong061025@gmail.com</li>
+                    <li><i class="bi bi-telephone-fill me-2 text-success"></i><strong>Điện thoại:</strong> +84 0345316652</li>
+                    <li><i class="bi bi-geo-alt-fill me-2 text-warning"></i><strong>Địa chỉ:</strong> Hà Nội, Việt Nam</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card bg-light shadow-sm mb-4">
+            <div class="card-body">
+                <h5 class="card-title mb-3"><i class="bi bi-share-fill me-2 text-info"></i>Kết Nối Xã Hội</h5>
+                <div class="d-flex gap-3 mb-2">
+                    <a href="https://www.facebook.com/share/174M8iJ14n/?mibextid=wwXIfr" target="_blank" class="text-primary fs-3" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-info fs-3" title="Zalo"><i class="bi bi-chat-dots"></i></a>
+                    <a href="https://github.com/khanhduong205vn/BlogCaNhan.git" target="_blank" class="text-dark fs-3" title="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://www.instagram.com/khak_1233?igsh=MXQ2Zmw5dzNlMTdwYw%3D%3D&utm_source=qr" target="_blank" class="text-danger fs-3" title="Instagram"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<!-- Banner Hero Section -->
+<div class="p-5 mb-4 bg-primary text-white rounded-3 shadow-sm text-center">
+    <h1 class="display-4 fw-bold mb-3">Chào mừng đến với MyBlog!</h1>
+    <p class="lead mb-4">Nơi chia sẻ kiến thức, kinh nghiệm và cảm hứng về lập trình, công nghệ và cuộc sống.</p>
+    <a href="#baiviet" class="btn btn-light btn-lg px-4">Khám phá bài viết</a>
+</div>
+
+<!-- Section giới thiệu ngắn -->
+<div class="row justify-content-center mb-5">
+    <div class="col-md-8 text-center">
+        <h2 class="mb-3">Về blog này</h2>
+        <p class="fs-5">Blog cá nhân chia sẻ các bài viết chất lượng về lập trình, phát triển bản thân và những trải nghiệm thực tế. Hãy cùng khám phá và để lại bình luận nhé!</p>
+    </div>
+</div>
+
+<!-- Danh sách bài viết nổi bật -->
+<h2 id="baiviet" class="mb-4 text-center">Bài viết mới nhất</h2>
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="col">
+        <div class="card h-100 shadow border-0">
+            <div class="position-relative">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Demo bài viết 1" style="height:220px;object-fit:cover;">
+                <span class="badge bg-success position-absolute top-0 end-0 m-2">Mới</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Demo bài viết 1</h5>
+                <p class="card-text">Tóm tắt ngắn gọn về bài viết 1...</p>
+                <a href="/Post/Index/1" class="btn btn-outline-primary">Đọc tiếp</a>
+            </div>
+            <div class="card-footer text-muted small">Tác giả: Demo | 22/07/2025 | 5 phút đọc</div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100 shadow border-0">
+            <div class="position-relative">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Demo bài viết 2" style="height:220px;object-fit:cover;">
+                <span class="badge bg-info position-absolute top-0 end-0 m-2">Nổi bật</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Demo bài viết 2</h5>
+                <p class="card-text">Tóm tắt ngắn gọn về bài viết 2...</p>
+                <a href="/Post/Index/2" class="btn btn-outline-primary">Đọc tiếp</a>
+            </div>
+            <div class="card-footer text-muted small">Tác giả: Demo | 21/07/2025 | 4 phút đọc</div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100 shadow border-0">
+            <div class="position-relative">
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Demo bài viết 3" style="height:220px;object-fit:cover;">
+                <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Xu hướng</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Demo bài viết 3</h5>
+                <p class="card-text">Tóm tắt ngắn gọn về bài viết 3...</p>
+                <a href="/Post/Index/3" class="btn btn-outline-primary">Đọc tiếp</a>
+            </div>
+            <div class="card-footer text-muted small">Tác giả: Demo | 20/07/2025 | 6 phút đọc</div>
+        </div>
+    </div>
+</div>

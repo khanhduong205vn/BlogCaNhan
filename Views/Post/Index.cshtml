@@ -1,0 +1,55 @@
+@using wweblog.Models
+@{
+    ViewData["Title"] = "Bài viết";
+    var comments = ViewBag.Comments as IEnumerable<Comment>;
+}
+<div class="card mb-4 shadow-sm border-0">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" class="card-img-top" alt="cover" style="height:320px;object-fit:cover;">
+    <div class="card-body">
+        <h1 class="card-title display-5 fw-bold mb-2">ASP.NET</h1>
+        <div class="d-flex align-items-center mb-3">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="avatar" class="rounded-circle me-2" style="width:40px;height:40px;object-fit:cover;">
+            <div class="small text-muted">
+                <span class="fw-semibold">Demo</span> &bull; 22/07/2025 &bull; <i class="bi bi-clock me-1"></i>5 phút đọc
+            </div>
+        </div>
+        <div class="card-text fs-5 lh-lg">
+            <p>Nội dung bài viết đầy đủ...</p>
+        </div>
+    </div>
+</div>
+<div class="card mb-4 border-0 shadow-sm">
+    <div class="card-header bg-light d-flex align-items-center">
+        <i class="bi bi-chat-dots text-primary me-2 fs-4"></i>
+        <h3 class="h5 mb-0">Bình luận</h3>
+    </div>
+    <div class="card-body">
+        <ul class="list-group mb-4">
+            @if (comments != null)
+            {
+                foreach (var c in comments)
+                {
+                    <li class="list-group-item d-flex align-items-start">
+                        <i class="bi bi-person-circle fs-3 me-2 text-primary"></i>
+                        <div>
+                            <div class="fw-semibold">@c.Email <span class="text-muted small">- @c.CreatedAt.ToString("dd/MM/yyyy HH:mm")</span></div>
+                            <div>@c.Content</div>
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+        <form method="post" class="border rounded p-3 bg-light">
+            <input type="hidden" name="id" value="@ViewBag.PostId" />
+            <div class="mb-2">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" placeholder="Nhập email của bạn" required />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Nội dung</label>
+                <textarea class="form-control" name="content" placeholder="Nhập bình luận..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Gửi bình luận</button>
+        </form>
+    </div>
+</div>
