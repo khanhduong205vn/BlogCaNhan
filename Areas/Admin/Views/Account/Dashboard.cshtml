@@ -1,0 +1,127 @@
+@{
+    ViewData["Title"] = "Trang quản trị";
+}
+<style>
+    body {
+        min-height: 100vh;
+        background: #f6f8fa;
+        font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    .admin-dashboard {
+        min-height: 100vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 3.5rem;
+    }
+    .admin-sidebar {
+        background: #fff;
+        border-radius: 1.2rem;
+        box-shadow: 0 4px 24px 0 rgba(0,0,0,0.07);
+        padding: 2rem 1.2rem;
+        width: 220px;
+        margin-right: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        height: 350px;
+    }
+    .admin-sidebar-title {
+        font-size: 1.18rem;
+        font-weight: 700;
+        color: #2563eb;
+        margin-bottom: 1.2rem;
+        text-align: center;
+    }
+    .admin-nav-link {
+        display: block;
+        padding: 0.7rem 1rem;
+        border-radius: 0.7rem;
+        color: #222;
+        font-size: 1.08rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background 0.18s, color 0.18s;
+    }
+    .admin-nav-link.active, .admin-nav-link:hover {
+        background: #e8f0fe;
+        color: #2563eb;
+    }
+    .admin-content {
+        background: #fff;
+        border-radius: 1.2rem;
+        box-shadow: 0 4px 24px 0 rgba(0,0,0,0.07);
+        padding: 2.5rem 2rem 2rem 2rem;
+        min-width: 340px;
+        min-height: 350px;
+        flex: 1;
+    }
+    .admin-content-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #2563eb;
+        margin-bottom: 1.2rem;
+    }
+    .admin-footer {
+        font-size: 0.98rem;
+        color: #aaa;
+        text-align: center;
+        margin-top: 2.5rem;
+    }
+    @@media (max-width: 900px) {
+        .admin-dashboard {
+            flex-direction: column;
+            align-items: stretch;
+            padding-top: 1.5rem;
+        }
+        .admin-sidebar {
+            margin-right: 0;
+            margin-bottom: 1.5rem;
+            width: 100%;
+            flex-direction: row;
+            height: auto;
+            justify-content: space-around;
+        }
+        .admin-content {
+            min-width: unset;
+        }
+    }
+</style>
+
+<div class="admin-dashboard">
+    <div class="admin-sidebar">
+        <div class="admin-sidebar-title">Quản trị</div>
+        <a href="#posts" class="admin-nav-link active" onclick="showTab('posts', event)">Quản lý bài viết</a>
+        <a href="#categories" class="admin-nav-link" onclick="showTab('categories', event)">Quản lý danh mục</a>
+        <a href="#settings" class="admin-nav-link" onclick="showTab('settings', event)">Quản lý cài đặt</a>
+    </div>
+    <div class="admin-content">
+        <div id="tab-posts" class="admin-tab">
+            <div class="admin-content-title">Quản lý bài viết</div>
+            <p>Tạo, chỉnh sửa, xóa và duyệt các bài viết trên blog.</p>
+            <!-- Thêm bảng danh sách bài viết, nút tạo mới, v.v. ở đây -->
+        </div>
+        <div id="tab-categories" class="admin-tab" style="display:none">
+            <div class="admin-content-title">Quản lý danh mục</div>
+            <p>Tổ chức, phân loại các chủ đề và danh mục bài viết.</p>
+            <!-- Thêm giao diện quản lý danh mục ở đây -->
+        </div>
+        <div id="tab-settings" class="admin-tab" style="display:none">
+            <div class="admin-content-title">Quản lý cài đặt</div>
+            <p>Cấu hình các thông tin, tùy chọn và bảo mật hệ thống.</p>
+            <!-- Thêm giao diện cài đặt ở đây -->
+        </div>
+    </div>
+</div>
+<div class="admin-footer">
+    &copy; @DateTime.Now.Year - Blog Quản trị. Powered by ASP.NET Core
+</div>
+<script>
+    function showTab(tab, e) {
+        e.preventDefault();
+        document.querySelectorAll('.admin-nav-link').forEach(link => link.classList.remove('active'));
+        if (e.target) e.target.classList.add('active');
+        document.querySelectorAll('.admin-tab').forEach(tabEl => tabEl.style.display = 'none');
+        document.getElementById('tab-' + tab).style.display = '';
+    }
+</script>
